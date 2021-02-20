@@ -12,6 +12,8 @@ public class FluxTests {
     public void fluxArrayAndMapTest() {
         Flux.just(1, 2, 3, 4, 5)
                 .map(i -> i * i)
+//        FluxArray的subscribe方法会返回给订阅者一个Subscription实现类的对象
+                // 订阅发布者
                 .subscribe(new Subscriber<Integer>() {
 
                     @Override

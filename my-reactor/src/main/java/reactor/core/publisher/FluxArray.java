@@ -15,6 +15,7 @@ public class FluxArray<T> extends Flux<T> {
         actual.onSubscribe(new ArraySubscription<>(actual, array));
     }
 
+    //    Subscription是Publisher和Subscriber的「中间人」
     static class ArraySubscription<T> implements Subscription {
         final Subscriber<? super T> actual;
         final T[] array;

@@ -5,6 +5,7 @@ import org.reactivestreams.Subscription;
 
 import java.util.function.Consumer;
 
+// 顶一个订阅者
 public class LambdaSubscriber<T> implements Subscriber<T> {
 
     final Consumer<? super T> consumer;

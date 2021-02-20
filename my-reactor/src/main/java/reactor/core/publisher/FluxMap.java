@@ -17,9 +17,11 @@ public class FluxMap<T, R> extends Flux<R> {
 
     @Override
     public void subscribe(Subscriber<? super R> actual) {
+        // 订阅到 FluxArray
         source.subscribe(new MapSubscriber<>(actual, mapper));
     }
 
+    // 作为中间人 Subscription 和 订阅者
     static final class MapSubscriber<T, R> implements Subscriber<T>, Subscription {
         private final Subscriber<? super R> actual;
         private final Function<? super T, ? extends R> mapper;
