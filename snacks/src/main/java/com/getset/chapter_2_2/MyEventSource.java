@@ -21,15 +21,13 @@ public class MyEventSource {
     }
 
     public void newEvent(MyEvent event) {
-        for (MyEventListener listener :
-                listeners) {
+        for (MyEventListener listener : listeners) {
             listener.onNewEvent(event);
         }
     }
 
     public void eventStopped() {
-        for (MyEventListener listener :
-                listeners) {
+        for (MyEventListener listener : listeners) {
             listener.onEventStopped();
         }
     }

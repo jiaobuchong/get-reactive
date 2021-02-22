@@ -54,7 +54,7 @@ public class Test_2_3 {
     @Test
     public void testCreateBackPressureStratety() {
         fastPublisher =
-                createFlux(FluxSink.OverflowStrategy.IGNORE)    // BUFFER/DROP/LATEST/ERROR/IGNORE
+                createFlux(FluxSink.OverflowStrategy.ERROR)    // BUFFER/DROP/LATEST/ERROR/IGNORE
                         .doOnRequest(n -> System.out.println("         ===  request: " + n + " ==="))
                         .publishOn(Schedulers.newSingle("newSingle"), 2);
     }

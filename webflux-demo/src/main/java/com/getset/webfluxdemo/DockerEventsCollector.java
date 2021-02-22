@@ -50,8 +50,7 @@ public class DockerEventsCollector implements CommandLineRunner {
                 }
             };
             docker.eventsCmd().exec(callback);
-        })
-                .map(this::trans)
+        }).map(this::trans)
                 .doOnNext(e -> log.info(e.toString()));
     }
 

@@ -2,6 +2,7 @@ package com.getset;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Test_1_1 {
     @Test
     public void testJavaStream() {
         @Data
+        @NoArgsConstructor
         @AllArgsConstructor
         class Product {
             private String name;
